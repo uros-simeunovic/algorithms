@@ -8,3 +8,18 @@ def list_to_tree(elements):
                 del last["parent"]
                 e["elements"].append(last)
     return elements[0]
+
+def print_tree_ids(element):
+    print(element["id"])
+    if "elements" in element:
+        for e in element["elements"]:
+            print_id(e)
+
+
+def get_tree_ids(element):
+    n = [element["id"]]
+    if "elements" in element:
+        for e in element["elements"]:
+            n.extend(get_tree_ids(e))
+    return n
+
