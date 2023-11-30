@@ -23,3 +23,18 @@ def get_tree_ids(element):
             n.extend(get_tree_ids(e))
     return n
 
+
+def list_to_tree(elements):
+    tree = {}
+    for e in elements[1:]:
+        if e["parent"] not in elements_map:
+            elements_map[e["parent"]] = []
+        elements_map[e["parent"]].append(e)
+
+    for e in elements:
+        if "parent" in e:
+            del e["parent"]
+        if e["id"] in elements_map:
+            e["elements"] = elements_map[e["id"]]
+
+    print(json.dumps(elements[0], indent=2))
