@@ -1,0 +1,10 @@
+id,parent,attribute
+1,,attribute1
+2,1,attribute2
+3,1,attribute3
+4,2,attribute4
+5,2,attribute5
+6,2,attribute6
+7,3,attribute7
+8,4,attribute8
+9,6,attribute9
